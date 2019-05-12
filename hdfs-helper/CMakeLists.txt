@@ -1,0 +1,69 @@
+cmake_minimum_required(VERSION 3.10)
+project(hdfs_fuse)
+
+include_directories(
+    include
+    $ENV{HADOOP_HOME}/include
+    $ENV{JAVA_HOME}/include
+)
+
+link_directories(
+    $ENV{HADOOP_HOME}/lib/native
+    $ENV{JAVA_HOME}/jre/lib/amd64/server
+)
+
+set(
+    SOURCE
+    src/main.c
+    src/hdfs_getattr.c
+    src/hdfs_readlink.c
+    src/hdfs_mknod.c
+    src/hdfs_mkdir.c
+    src/hdfs_unlink.c
+    src/hdfs_rmdir.c
+    src/hdfs_symlink.c
+    src/hdfs_rename.c
+    src/hdfs_link.c
+    src/hdfs_chmod.c
+    src/hdfs_chown.c
+    src/hdfs_truncate.c
+    src/hdfs_open.c
+    src/hdfs_read.c
+    src/hdfs_write.c
+    src/hdfs_statfs.c
+    src/hdfs_flush.c
+    src/hdfs_release.c
+    src/hdfs_fsync.c
+    src/hdfs_setxattr.c
+    src/hdfs_getxattr.c
+    src/hdfs_listxattr.c
+    src/hdfs_removexattr.c
+    src/hdfs_opendir.c
+    src/hdfs_readdir.c
+    src/hdfs_releasedir.c
+    src/hdfs_fsyncdir.c
+    src/hdfs_init.c
+    src/hdfs_destroy.c
+    src/hdfs_access.c
+    src/hdfs_create.c
+    src/hdfs_lock.c
+    src/hdfs_utimens.c
+    src/hdfs_bmap.c
+    src/hdfs_ioctl.c
+    src/hdfs_poll.c
+    src/hdfs_write_buf.c
+    src/hdfs_read_buf.c
+    src/hdfs_flock.c
+    src/hdfs_fallocate.c
+    src/hdfs_copy_file_range.c
+)
+
+add_executable(hdfs-mount ${SOURCE})
+target_link_libraries(
+    hdfs-mount
+    fuse3
+    hdfs
+    jvm
+    m
+    pthread
+)

@@ -1,0 +1,3 @@
+/root/hdfs-fuse/CMakeFiles/rebuild_cache.dir
+/root/hdfs-fuse/CMakeFiles/hdfs-mount.dir
+/root/hdfs-fuse/CMakeFiles/edit_cache.dir

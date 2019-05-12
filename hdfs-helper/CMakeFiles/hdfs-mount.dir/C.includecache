@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/root/hdfs-fuse/src/hdfs_access.c
+hdfs_fuse.h
+/root/hdfs-fuse/src/hdfs_fuse.h
+
+include/hdfs.h
+errno.h
+-
+fcntl.h
+-
+stdint.h
+-
+time.h
+-
+
+include/hdfs_fuse.h
+fuse3/fuse.h
+-
+hdfs.h
+-
+pthread.h
+-
+
