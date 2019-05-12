@@ -47,12 +47,10 @@ gdb zipfs
 run [file.zip] -f -s -d [mount_point]
 ```
 
-/*
-Reference
+####Reference
 https://engineering.facile.it/blog/eng/write-filesystem-fuse/
 https://www.cs.nmsu.edu/~pfeiffer/fuse-tutorial/html/unclear.html
 https://www.cs.hmc.edu/~geoff/classes/hmc.cs135.201109/homework/fuse/fuse_doc.html
 https://github.com/Ninja3047/Fuse-Zip
 https://libfuse.github.io/doxygen/index.html
 https://libzip.org/documentation/
-*/
